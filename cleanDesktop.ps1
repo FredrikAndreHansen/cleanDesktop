@@ -1,5 +1,4 @@
 ﻿<# Initialize Variables #>
-<# Initialize Variables #>
 [string]$desktopPath = "C:\Users\Fredrik\Desktop";
 [string]$customDesktopPath = "C:\Users\Fredrik\CustomDesktop\Files";
 
