@@ -7,10 +7,12 @@
 [string]$customDesktopPath = "C:\Users\Fredrik\CustomDesktop\Files";
 [string]$imagesFolder = "\Images";
 [string]$documentsFolder = "\Documents";
+[string]$videosFolder = "\Videos";
 [string]$otherFolder = "\Other";
 
 [string]$imagesPath = $customDesktopPath + $imagesFolder;
 [string]$documentsPath = $customDesktopPath + $documentsFolder;
+[string]$videosPath = $customDesktopPath + $videosFolder;
 [string]$otherPath = $customDesktopPath + $otherFolder;
 
 [string]$currentYear = Get-Date -f yyyy;
@@ -19,10 +21,12 @@
 
 [string]$fullImagePath = $imagesPath + "\" + $destinationFolder;
 [string]$fullDocumentPath = $documentsPath + "\" + $destinationFolder;
+[string]$fullVideoPath = $videosPath + "\" + $destinationFolder;
 [string]$fullOtherPath = $otherPath + "\" + $destinationFolder;
 
 [array]$imageExtensions = @(".png", ".jpg", ".gif", ".svg");
 [array]$documentExtensions = @(".txt", ".doc", ".docx", ".pdf", ".odt");
+[array]$videoExtensions = @(".mp4", ".mov", ".avi", ".wmv", ".avchd", ".webm", ".flv");
 
 <# Functions #>
 function Create-Folder-If-Not_exist {
@@ -86,7 +90,13 @@ forEach($file in $getAllFiles) {
         Create-Folder-If-Not_exist -fullFilePath $fullDocumentPath;
 
         Move-File -file $file -destinationPath $fullDocumentPath;
-    } 
+    }
+    <# Videos #>
+    elseif ($file.Extension -in $videoExtensions) {
+        Create-Folder-If-Not_exist -fullFilePath $fullVideoPath;
+
+        Move-File -file $file -destinationPath $fullVideoPath;
+    }
     <# All other files #>
     else {
         
