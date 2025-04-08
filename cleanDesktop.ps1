@@ -93,6 +93,7 @@ forEach($file in $getAllFiles) {
     }
     <# Videos #>
     elseif ($file.Extension -in $videoExtensions) {
+
         Create-Folder-If-Not_exist -fullFilePath $fullVideoPath;
 
         Move-File -file $file -destinationPath $fullVideoPath;
