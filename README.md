@@ -6,15 +6,27 @@ It will sort by images, videos, documents and all other files!
 If the subfolder with the current month and year dont exist, it will also automatically be created!
 Also, if the filename is duplicate, it will then get a new name (a number will be added to the name).
 
+#######################################
+
 Configuration
+
 This is the current path to clean
+
 <# Desktop path #>
+
 [string]$desktopPath = "C:\Users\Fredrik\Desktop";
 
+
 All destination paths, the folder named "Files" must contain the following subfolders "Images", "Documents", "Videos" and "Other".
+
 <# Destination paths #>
+
 [string]$customDesktopPath = "C:\Users\Fredrik\CustomDesktop\Files";
+
 [string]$imagesFolder = "\Images";
+
 [string]$documentsFolder = "\Documents";
+
 [string]$videosFolder = "\Videos";
+
 [string]$otherFolder = "\Other";
