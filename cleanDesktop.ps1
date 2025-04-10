@@ -1,9 +1,9 @@
-﻿<# Initialize Variables #>
+﻿# Initialize Variables #
 
-<# Desktop path #>
+# Desktop path #
 [string]$desktopPath = "C:\Users\Fredrik\Desktop";
 
-<# Destination paths #>
+# Destination paths #
 [string]$customDesktopPath = "C:\Users\Fredrik\CustomDesktop\Files";
 [string]$imagesFolder = "\Images";
 [string]$documentsFolder = "\Documents";
@@ -28,7 +28,7 @@
 [array]$documentExtensions = @(".txt", ".doc", ".docx", ".pdf", ".odt");
 [array]$videoExtensions = @(".mp4", ".mov", ".avi", ".wmv", ".avchd", ".webm", ".flv");
 
-<# Functions #>
+# Functions #
 function Create-Folder-If-Not_exist {
     param (
         [string]$fullFilePath
@@ -52,7 +52,7 @@ function Move-File {
     [string]$fileDestination = $destinationPath + "\" + $file.Name;
     [bool]$doesFileExist = Test-Path -Path $fileDestination;
 
-    <# Move the file, if the name exist, then change the file name #>
+    # Move the file, if the name exist, then change the file name #
     if ($doesFileExist -eq $false) {
         Move-Item -Path $filePath -Destination $destinationPath;
     } else {
@@ -72,33 +72,33 @@ function Move-File {
     }
 }
 
-<# Move files #>
+# Move files #
 $getAllFiles = Get-ChildItem -Path $desktopPath;
 
 forEach($file in $getAllFiles) {
 
-    <# Images #>
+    # Images #
     if ($file.Extension -in $imageExtensions) {
 
         Create-Folder-If-Not_exist -fullFilePath $fullImagePath;
 
         Move-File -file $file -destinationPath $fullImagePath;
     } 
-    <# Documents #>
+    # Documents #
     elseif ($file.Extension -in $documentExtensions) {
 
         Create-Folder-If-Not_exist -fullFilePath $fullDocumentPath;
 
         Move-File -file $file -destinationPath $fullDocumentPath;
     }
-    <# Videos #>
+    # Videos #
     elseif ($file.Extension -in $videoExtensions) {
 
         Create-Folder-If-Not_exist -fullFilePath $fullVideoPath;
 
         Move-File -file $file -destinationPath $fullVideoPath;
     }
-    <# All other files #>
+    # All other files #
     else {
         
         Create-Folder-If-Not_exist -fullFilePath $fullOtherPath;
