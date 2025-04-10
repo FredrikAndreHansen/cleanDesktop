@@ -1,5 +1,5 @@
 ﻿# Initialize Variables #
-
+ 
 # Desktop path #
 [string]$desktopPath = "C:\Users\Fredrik\Desktop";
 
