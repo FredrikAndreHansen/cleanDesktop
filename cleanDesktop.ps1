@@ -1,10 +1,10 @@
 ﻿# Initialize Variables #
 
 # Desktop path #
-[string]$desktopPath = "C:\Users\Fredrik\Desktop";
+[string]$desktopPath = "C:\Users\fredr\Desktop";
 
 # Destination paths #
-[string]$customDesktopPath = "C:\Users\Fredrik\CustomDesktop\Files";
+[string]$customDesktopPath = "C:\Users\fredr\Documents\Files";
 [string]$imagesFolder = "\Images";
 [string]$documentsFolder = "\Documents";
 [string]$videosFolder = "\Videos";
