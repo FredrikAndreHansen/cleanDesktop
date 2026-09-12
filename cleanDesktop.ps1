@@ -24,7 +24,7 @@
 [string]$fullVideoPath = $videosPath + "\" + $destinationFolder;
 [string]$fullOtherPath = $otherPath + "\" + $destinationFolder;
 
-[array]$imageExtensions = @(".png", ".jpg", ".gif", ".svg");
+[array]$imageExtensions = @(".png", ".jpg", ".gif", ".svg", ".avif", ".webp", ".raw");
 [array]$documentExtensions = @(".txt", ".doc", ".docx", ".pdf", ".odt");
 [array]$videoExtensions = @(".mp4", ".mov", ".avi", ".wmv", ".avchd", ".webm", ".flv");
 
